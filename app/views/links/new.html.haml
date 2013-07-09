@@ -1,0 +1,21 @@
+= form_for(@link, :html => { :multipart => true }) do |f| 
+  - if @link.errors.any? 
+    #error_explanation
+      %h2= pluralize(@link.errors.count, "fuck up") + "prohibited this link from being saved:"
+
+      %ul
+        - @link.errors.full_messages.each do |msg| 
+          %li= msg
+
+  .field
+    = f.label :url
+    %br
+    = f.text_field :url 
+
+  .field
+    = f.label :title
+    %br
+    = f.text_area :title 
+
+  .actions
+    = f.submit 

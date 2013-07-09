@@ -6,6 +6,7 @@ Readit::Application.routes.draw do
 
   resources :pages
   root to: "pages#index"
+  resources :links
   
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
