@@ -1,0 +1,9 @@
+%h2 I IS HOMEPAGE
+
+= link_to "Add a link", new_link_path
+
+%ul
+  - @links.each do |link|
+    %li= link_to link.title, link.url
+
+= will_paginate @links
